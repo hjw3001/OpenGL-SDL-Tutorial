@@ -12,8 +12,8 @@
 
 Shader::Shader(const std::string& filename) {
     m_program = glCreateProgram();
-    m_shaders[0] = CreateShader(LoadShader(filename) + ".vs", GL_VERTEX_SHADER);
-    m_shaders[1] = CreateShader(LoadShader(filename) + ".fs", GL_FRAGMENT_SHADER);
+    m_shaders[0] = CreateShader(LoadShader(filename + ".vs"), GL_VERTEX_SHADER);
+    m_shaders[1] = CreateShader(LoadShader(filename + ".fs"), GL_FRAGMENT_SHADER);
     
     for (unsigned int i = 0; i < NUM_SHADERS; i++) {
         glAttachShader(m_program, m_shaders[i]);
@@ -50,10 +50,14 @@ std::string Shader::LoadShader(const std::string& fileName)
     
     if(file.is_open())
     {
+        std::cout << "File is open: " << fileName << std::endl;
+        
         while(file.good())
         {
             getline(file, line);
+            // std::cout << "line: " << line << std::endl;
             output.append(line + "\n");
+            
         }
     }
     else
@@ -82,10 +86,12 @@ void Shader::CheckShaderError(GLuint shader, GLuint flag, bool isProgram, const 
             glGetShaderInfoLog(shader, sizeof(error), NULL, error);
         
         std::cerr << errorMessage << ": '" << error << "'" << std::endl;
+    } else {
+        std::cout << "No errors found in shader" << std::endl;
     }
 }
 
-GLuint Shader::CreateShader(const std::string text, GLenum shaderType) {
+GLuint Shader::CreateShader(const std::string& text, unsigned int shaderType) {
     GLuint shader = glCreateShader(shaderType);
     
     if (shader == 0) {
@@ -99,9 +105,11 @@ GLuint Shader::CreateShader(const std::string text, GLenum shaderType) {
     shaderSourceStringLengths[0] = text.length();
     
     glShaderSource(shader, 1, shaderSourceStrings, shaderSourceStringLengths);
-    glCompileShader(1);
+    glCompileShader(shader);
     
     CheckShaderError(shader, GL_COMPILE_STATUS, false, "Error: shader compilation failed: ");
+    
+    std::cout << "CreateShader has completed" << std::endl;
     
     return shader;
 }
