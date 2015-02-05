@@ -20,6 +20,7 @@ Shader::Shader(const std::string& filename) {
     }
     
     glBindAttribLocation(m_program, 0, "position");
+    glBindAttribLocation(m_program, 1, "texCoord");
     
     glLinkProgram(m_program);
     CheckShaderError(m_program, GL_LINK_STATUS, true, "Error: program linking failed: ");
@@ -40,54 +41,41 @@ void Shader::Bind() {
     glUseProgram(m_program);
 }
 
-std::string Shader::LoadShader(const std::string& fileName)
-{
+std::string Shader::LoadShader(const std::string& fileName) {
     std::ifstream file;
     file.open((fileName).c_str());
     
     std::string output;
     std::string line;
     
-    if(file.is_open())
-    {
-        std::cout << "File is open: " << fileName << std::endl;
-        
-        while(file.good())
-        {
+    if(file.is_open()) {
+        while(file.good()) {
             getline(file, line);
-            // std::cout << "line: " << line << std::endl;
             output.append(line + "\n");
-            
         }
-    }
-    else
-    {
+    } else {
         std::cerr << "Unable to load shader: " << fileName << std::endl;
     }
     
     return output;
 }
 
-void Shader::CheckShaderError(GLuint shader, GLuint flag, bool isProgram, const std::string& errorMessage)
-{
+void Shader::CheckShaderError(GLuint shader, GLuint flag, bool isProgram, const std::string& errorMessage) {
     GLint success = 0;
     GLchar error[1024] = { 0 };
     
-    if(isProgram)
+    if (isProgram)
         glGetProgramiv(shader, flag, &success);
     else
         glGetShaderiv(shader, flag, &success);
     
-    if(success == GL_FALSE)
-    {
-        if(isProgram)
+    if (success == GL_FALSE) {
+        if (isProgram)
             glGetProgramInfoLog(shader, sizeof(error), NULL, error);
         else
             glGetShaderInfoLog(shader, sizeof(error), NULL, error);
         
         std::cerr << errorMessage << ": '" << error << "'" << std::endl;
-    } else {
-        std::cout << "No errors found in shader" << std::endl;
     }
 }
 
@@ -109,7 +97,7 @@ GLuint Shader::CreateShader(const std::string& text, unsigned int shaderType) {
     
     CheckShaderError(shader, GL_COMPILE_STATUS, false, "Error: shader compilation failed: ");
     
-    std::cout << "CreateShader has completed" << std::endl;
+    // std::cout << "CreateShader has completed" << std::endl;
     
     return shader;
 }

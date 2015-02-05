@@ -4,7 +4,6 @@
 //
 //  Created by Henry Wagner on 1/24/15.
 //  Copyright (c) 2015 Henry Wagner. All rights reserved.
-//
 
 #ifndef __FirstSQLOpenGL__Mesh__
 #define __FirstSQLOpenGL__Mesh__
@@ -15,12 +14,18 @@
 
 class Vertex {
 public:
-    Vertex(const glm::vec3& pos) {
+    Vertex(const glm::vec3& pos, const glm::vec2& textCoord) { //
         this->pos = pos;
+        this->texCoord = textCoord;
     }
+    glm::vec3 pos;
+    glm::vec2 texCoord;
+    
+    glm::vec3* GetPos() { return &pos; }
+    glm::vec2* GetTexCoord() { return &texCoord; }
+    
 protected:
 private:
-    glm::vec3 pos;
 };
 
 class Mesh {
@@ -38,6 +43,7 @@ private:
     
     enum {
       POSITION_VB,
+      TEXCOORD_VB,
       NUM_BUFFERS
     };
     
