@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>079EF043-ED73-4DB0-A186-3611D205220D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>OpenGLSDLTutorial</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9AEA8831153184E6BAC8418A6BB10B048F948CAD</key>
+		<string>https://github.com/hjw3001/OpenGL-SDL-Tutorial.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>OpenGLSDLTutorial.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9AEA8831153184E6BAC8418A6BB10B048F948CAD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/hjw3001/OpenGL-SDL-Tutorial.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9AEA8831153184E6BAC8418A6BB10B048F948CAD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9AEA8831153184E6BAC8418A6BB10B048F948CAD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>OpenGL-SDL-Tutorial</string>
+		</dict>
+	</array>
+</dict>
+</plist>
