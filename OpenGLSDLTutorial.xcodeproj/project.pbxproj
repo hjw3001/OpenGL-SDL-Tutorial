@@ -42,6 +42,7 @@
 		6FD31DCC1A7425DD005CC5AE /* basicShader.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = basicShader.fs; path = res/basicShader.fs; sourceTree = "<group>"; };
 		6FD31DCD1A746D41005CC5AE /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
 		6FD31DCE1A746D41005CC5AE /* Mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
+		6FF452841A8454FF00E826F9 /* Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transform.h; sourceTree = "<group>"; };
 		6FFDD6FE1A71D9F9005D1591 /* OpenGLSDLTutorial */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGLSDLTutorial; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FFDD7011A71D9F9005D1591 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6FFDD7081A71DAF0005D1591 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -106,6 +107,7 @@
 				6FD31DC91A736AE1005CC5AE /* Shader.h */,
 				6FD31DCD1A746D41005CC5AE /* Mesh.cpp */,
 				6FD31DCE1A746D41005CC5AE /* Mesh.h */,
+				6FF452841A8454FF00E826F9 /* Transform.h */,
 			);
 			path = OpenGLSDLTutorial;
 			sourceTree = "<group>";

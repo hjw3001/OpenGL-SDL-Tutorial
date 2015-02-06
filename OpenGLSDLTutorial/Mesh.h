@@ -1,12 +1,12 @@
 //
 //  Mesh.h
-//  FirstSQLOpenGL
+//  FirstSDLOpenGL
 //
 //  Created by Henry Wagner on 1/24/15.
 //  Copyright (c) 2015 Henry Wagner. All rights reserved.
 
-#ifndef __FirstSQLOpenGL__Mesh__
-#define __FirstSQLOpenGL__Mesh__
+#ifndef __FirstSDLOpenGL__Mesh__
+#define __FirstSDLOpenGL__Mesh__
 
 #include <stdio.h>
 #include <glm/glm.hpp>
@@ -14,18 +14,17 @@
 
 class Vertex {
 public:
-    Vertex(const glm::vec3& pos, const glm::vec2& textCoord) { //
-        this->pos = pos;
-        this->texCoord = textCoord;
-    }
-    glm::vec3 pos;
-    glm::vec2 texCoord;
+    Vertex(const glm::vec3& pos, const glm::vec2& textCoord) :
+        m_pos(pos),
+        m_texCoord(textCoord) {}
     
-    glm::vec3* GetPos() { return &pos; }
-    glm::vec2* GetTexCoord() { return &texCoord; }
+    inline glm::vec3& GetPos() { return m_pos; }
+    inline glm::vec2& GetTexCoord() { return m_texCoord; }
     
 protected:
 private:
+    glm::vec3 m_pos;
+    glm::vec2 m_texCoord;
 };
 
 class Mesh {
@@ -52,5 +51,5 @@ private:
     unsigned int m_drawCount;
 };
 
-#endif /* defined(__FirstSQLOpenGL__Mesh__) */
+#endif /* defined(__FirstSDLOpenGL__Mesh__) */
 

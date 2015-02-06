@@ -1,6 +1,6 @@
  //
 //  Mesh.cpp
-//  FirstSQLOpenGL
+//  FirstSDLOpenGL
 //
 //  Created by Henry Wagner on 1/24/15.
 //  Copyright (c) 2015 Henry Wagner. All rights reserved.
@@ -21,8 +21,8 @@ Mesh::Mesh(Vertex* vertices, unsigned int numVerticies) {
     glGenBuffers(NUM_BUFFERS, m_vertexArrayBuffers);
 
     for (unsigned int i = 0; i < numVerticies; i++) {
-        positions.push_back(*vertices[i].GetPos());
-        textCoords.push_back(*vertices[i].GetTexCoord());
+        positions.push_back(vertices[i].GetPos());
+        textCoords.push_back(vertices[i].GetTexCoord());
     }
     
     glBindBuffer(GL_ARRAY_BUFFER, m_vertexArrayBuffers[POSITION_VB]);

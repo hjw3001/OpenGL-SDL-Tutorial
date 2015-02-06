@@ -6,6 +6,7 @@
 #include "Shader.h"
 #include "Mesh.h"
 #include "Texture.h"
+#include "Transform.h"
 
 static const int DISPLAY_WIDTH = 800;
 static const int DISPLAY_HEIGHT = 600;
@@ -20,15 +21,30 @@ int main() {
     Mesh mesh(vertices, sizeof(vertices)/sizeof(vertices[0]));
     Shader shader("./res/basicShader");
     Texture texture("./res/bricks.jpg");
+    Transform transform;
+    
+    float counter = 0.0f;
         
     while (!display.IsClosed()) {
         display.Clear(0.0f, 0.15f, 0.3f, 1.0f);
         
+        float sinCounter = sinf(counter);
+        float cosCounter = cosf(counter);
+        
+        transform.GetPos().x = sinCounter;
+        transform.GetRot().z = counter * 50;
+        transform.SetScale(glm::vec3(cosCounter, cosCounter, cosCounter));
+        
         shader.Bind();
         texture.Bind(0);
+
+        shader.Update(transform);
+        
         mesh.Draw();
         
         display.Update();
+        
+        counter += 0.01;
     }
     
     return 0;
