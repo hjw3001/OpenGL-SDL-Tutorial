@@ -36,6 +36,7 @@
 		6FA268611A7C417100596DC8 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
 		6FA268631A7C44CC00596DC8 /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
 		6FA268641A7C44CC00596DC8 /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		6FB556E71A85D180005BC315 /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
 		6FD31DC81A736AE1005CC5AE /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
 		6FD31DC91A736AE1005CC5AE /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
 		6FD31DCB1A7425C7005CC5AE /* basicShader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = basicShader.vs; path = res/basicShader.vs; sourceTree = "<group>"; };
@@ -102,6 +103,7 @@
 				6FD31DCB1A7425C7005CC5AE /* basicShader.vs */,
 				6FD31DCC1A7425DD005CC5AE /* basicShader.fs */,
 				6FFDD70A1A71DB58005D1591 /* Display.cpp */,
+				6FB556E71A85D180005BC315 /* Camera.h */,
 				6FFDD70B1A71DB58005D1591 /* Display.h */,
 				6FD31DC81A736AE1005CC5AE /* Shader.cpp */,
 				6FD31DC91A736AE1005CC5AE /* Shader.h */,

@@ -43,10 +43,10 @@ void Shader::Bind() {
     glUseProgram(m_program);
 }
 
-void Shader::Update(const Transform& transform) {
-    glm::mat4 model = transform.GetModel();
+void Shader::Update(const Transform& transform, const Camera& camera) {
+    glm::mat4 mvp = camera.GetViewProjection() * transform.GetModel();
     
-    glUniformMatrix4fv(m_uniforms[TRANSFORM_U], 1, GL_FALSE, &model[0][0]);
+    glUniformMatrix4fv(m_uniforms[TRANSFORM_U], 1, GL_FALSE, &mvp[0][0]);
 }
 
 std::string Shader::LoadShader(const std::string& fileName) {
